@@ -27,6 +27,8 @@ ADD conf/localhost.cfg /usr/local/nagios/etc/objects/localhost.cfg
 ADD conf/ports.conf /etc/apache2/ports-temp.conf
 ADD conf/000-default.conf /etc/apache2/sites-enabled/000-default-temp.conf
 
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
 ADD docker-cmd.sh .
 RUN chmod a+x docker-cmd.sh
 CMD ./docker-cmd.sh
