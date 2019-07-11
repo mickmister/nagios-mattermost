@@ -9,11 +9,13 @@ WORKDIR /tmp
 RUN wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.3.tar.gz
 RUN tar xzf nagioscore.tar.gz
 
-WORKDIR /tmp/nagioscore-nagios-4.4.3/
+WORKDIR /tmp/nagioscore-nagios-4.4.3
 
 ADD install-nagios.sh .
 RUN chmod a+x install-nagios.sh
 RUN ./install-nagios.sh
+
+WORKDIR /etc/apache2
 
 RUN touch /run/nagios.lock
 

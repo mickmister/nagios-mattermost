@@ -1,6 +1,3 @@
-ADD conf/ports.conf /etc/apache2/ports.conf
-ADD conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
-
 cat /etc/apache2/ports-temp.conf | sed "s/80/${PORT}/g" > /etc/apache2/ports.conf
 cat /etc/apache2/sites-enabled/000-default-temp.conf | sed "s/80/${PORT}/g" > /etc/apache2/sites-enabled/000-default.conf
 
