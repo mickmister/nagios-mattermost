@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  nagios:
+    build: .
+    ports:
+      - "80:80"
+      - "25:25"
+    environment:
+      - PORT=80
+      - MM_URL=https://mickmister.ngrok.io/hooks/dx6b97kfbint7jgt6yhmb763sa
+      - MM_CHANNEL=nagios
